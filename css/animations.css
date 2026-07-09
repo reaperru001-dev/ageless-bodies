@@ -1,0 +1,389 @@
+/* ============================================================
+   NUTRIGENIX — ANIMATIONS CSS
+   Scroll reveals, hover effects, keyframes, counters
+   ============================================================ */
+
+/* ══════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ══════════════════════════════════════════ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(46,125,50,0.4); }
+  50%       { box-shadow: 0 0 0 16px rgba(46,125,50,0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scroll-wheel {
+  0%   { transform: translateY(0); opacity: 1; }
+  80%  { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 0; }
+}
+
+@keyframes hero-blob {
+  0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50%       { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes draw-line {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes ripple {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL — Intersection Observer driven
+   (with CSS scroll-driven fallback support)
+   ══════════════════════════════════════════ */
+
+/* Initial hidden state for scroll-reveal elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Stagger delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
+.reveal-delay-8 { transition-delay: 0.8s; }
+
+/* Visible state — triggered by JS IntersectionObserver */
+.reveal.visible,
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* CSS scroll-driven animations (progressive enhancement for Chrome/Edge/Safari 26+) */
+@supports ((animation-timeline: view()) and (animation-range: entry)) {
+  .reveal-sda {
+    animation: fadeInUp linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ══════════════════════════════════════════
+   HOVER EFFECTS
+   ══════════════════════════════════════════ */
+
+/* Lift effect */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+}
+
+/* Scale effect */
+.hover-scale {
+  transition: transform var(--transition-base);
+}
+.hover-scale:hover { transform: scale(1.04); }
+
+/* Glow effect */
+.hover-glow:hover {
+  box-shadow: var(--shadow-green);
+}
+
+/* Image zoom */
+.hover-zoom img {
+  transition: transform var(--transition-slow);
+}
+.hover-zoom:hover img { transform: scale(1.07); }
+
+/* Underline slide */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--clr-primary);
+  transition: width var(--transition-base);
+}
+.hover-underline:hover::after { width: 100%; }
+
+/* ══════════════════════════════════════════
+   LOADING / SKELETON
+   ══════════════════════════════════════════ */
+
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ══════════════════════════════════════════
+   SPINNER / LOADER
+   ══════════════════════════════════════════ */
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+.spinner-dark {
+  border-color: rgba(46,125,50,0.2);
+  border-top-color: var(--clr-primary);
+}
+
+/* ══════════════════════════════════════════
+   GRADIENT TEXT ANIMATION
+   ══════════════════════════════════════════ */
+
+.gradient-text-animate {
+  background: linear-gradient(270deg, #2E7D32, #4CAF50, #FF8F00, #4CAF50, #2E7D32);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 5s ease infinite;
+}
+
+/* ══════════════════════════════════════════
+   PROGRESS BARS
+   ══════════════════════════════════════════ */
+
+.progress-bar {
+  height: 8px;
+  background: var(--clr-border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  width: 0;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-fill.animate { width: var(--target-width); }
+
+/* ══════════════════════════════════════════
+   BLOB ANIMATIONS
+   ══════════════════════════════════════════ */
+
+.blob {
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: hero-blob 8s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════
+   PAGE TRANSITION
+   ══════════════════════════════════════════ */
+
+.page-transition {
+  animation: fadeIn 0.4s ease both;
+}
+
+/* ══════════════════════════════════════════
+   CARD MICRO-ANIMATIONS
+   ══════════════════════════════════════════ */
+
+/* Icon pop on hover */
+.card-icon-pop {
+  transition: transform var(--transition-spring);
+}
+.card:hover .card-icon-pop { transform: scale(1.2) rotate(-5deg); }
+
+/* Border glow on hover */
+.card-glow {
+  transition: box-shadow var(--transition-base), border-color var(--transition-base);
+}
+.card-glow:hover {
+  box-shadow: 0 0 0 3px rgba(46,125,50,0.15), var(--shadow-xl);
+  border-color: var(--clr-primary-light) !important;
+}
+
+/* ══════════════════════════════════════════
+   NUMBER COUNTER ANIMATION
+   (triggered by JS when element enters viewport)
+   ══════════════════════════════════════════ */
+
+.counter-wrap {
+  animation: counter-up 0.6s ease both;
+}
+
+/* ══════════════════════════════════════════
+   TOOLTIP
+   ══════════════════════════════════════════ */
+
+[data-tooltip] {
+  position: relative;
+  cursor: pointer;
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--clr-dark);
+  color: white;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+[data-tooltip]:hover::after { opacity: 1; }
+
+/* ══════════════════════════════════════════
+   SECTION BG DECORATIONS
+   ══════════════════════════════════════════ */
+
+.section-blob-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-blob-bg::before {
+  content: '';
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,125,50,0.06) 0%, transparent 70%);
+  top: -200px;
+  right: -200px;
+  pointer-events: none;
+}
+
+.section-blob-bg::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,143,0,0.05) 0%, transparent 70%);
+  bottom: -100px;
+  left: -100px;
+  pointer-events: none;
+}
