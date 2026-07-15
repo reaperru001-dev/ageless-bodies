@@ -127,13 +127,14 @@
   left: 0;
   right: 0;
   z-index: var(--z-sticky);
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
   transition: all var(--transition-base);
-  background: transparent;
+  background: #FFFFFF;
+  box-shadow: 0 2px 24px rgba(0,0,0,0.06);
 }
 
 .navbar.scrolled {
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,0.97);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 4px 30px rgba(0,0,0,0.08);
@@ -155,7 +156,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-xl);
   font-weight: 800;
-  color: white;
+  color: var(--clr-dark);
   transition: color var(--transition-base);
   flex-shrink: 0;
 }
@@ -187,7 +188,7 @@
   font-family: var(--font-heading);
   font-size: var(--text-sm);
   font-weight: 600;
-  color: rgba(255,255,255,0.9);
+  color: var(--clr-dark);
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-md);
   transition: all var(--transition-fast);
@@ -196,8 +197,8 @@
 }
 
 .nav-link:hover {
-  color: white;
-  background: rgba(255,255,255,0.1);
+  color: var(--clr-primary);
+  background: var(--clr-primary-xlight);
 }
 
 .navbar.scrolled .nav-link { color: var(--clr-dark); }

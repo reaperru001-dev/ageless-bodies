@@ -35,13 +35,13 @@
     "description": "Personalized nutrition and wellness clinic offering DNA-based diet planning, nutrigenomics, and certified nutritionist consultations.",
     "url": "https://Ageless Bodies.com",
     "telephone": "+91-98765-43210",
-    "email": "hello@Ageless Bodies.com",
+    "email": "agelessbodies01@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "123 Wellness Avenue, Bandra West",
       "addressLocality": "Mumbai",
       "addressRegion": "Maharashtra",
-      "postalCode": "400050",
+      "postalCode": "400061",
       "addressCountry": "IN"
     },
     "openingHours": "Mo-Sa 09:00-19:00",
@@ -61,9 +61,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 80% at 0% 0%, rgba(46, 125, 50, 0.5) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 60% at 100% 100%, rgba(255, 143, 0, 0.2) 0%, transparent 50%),
-        linear-gradient(135deg, #1B5E20 0%, #2E7D32 40%, #388E3C 70%, #1A1A2E 100%);
+        radial-gradient(ellipse 80% 80% at 0% 0%, rgba(106, 139, 3, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 60% at 100% 100%, rgba(37, 150, 190, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, var(--clr-primary-dark) 0%, var(--clr-primary) 40%, var(--clr-primary-light) 70%, var(--clr-dark) 100%);
     }
 
     /* ── Decorative floating DNA ── */
@@ -156,9 +156,14 @@
       <div class="navbar-inner">
 
         <!-- Logo -->
-        <a href="index.html" class="navbar-logo" aria-label="AgelessBodies Home">
+        <!-- <a href="index.html" class="navbar-logo" aria-label="AgelessBodies Home">
           <div class="navbar-logo-icon" aria-hidden="true">🧬</div>
           Ageless<span>Bodies</span>
+        </a> -->
+        <a href="index.html" class="navbar-logo" aria-label="AgelessBodies Home">
+          <img src="assets/images/logo.png" alt="AgelessBodies Logo"
+            style="width:100px; height:100px; object-fit:contain; margin-right:10px; vertical-align:middle;">
+
         </a>
 
         <!-- Desktop Menu -->
@@ -672,7 +677,8 @@
 
         <article class="blog-card reveal reveal-delay-4">
           <div class="blog-card-img">
-            <div class="blog-card-img-placeholder" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">🍛
+            <div class="blog-card-img-placeholder"
+              style="background: linear-gradient(135deg, var(--clr-primary-xlight), var(--clr-beige-dark));">🍛
             </div>
           </div>
           <div class="blog-card-body">
@@ -731,7 +737,8 @@
 
         <article class="blog-card reveal reveal-delay-2">
           <div class="blog-card-img">
-            <div class="blog-card-img-placeholder" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">🥑
+            <div class="blog-card-img-placeholder"
+              style="background: linear-gradient(135deg, var(--clr-accent-xlight), var(--clr-beige-dark));">🥑
             </div>
           </div>
           <div class="blog-card-body">
@@ -797,8 +804,9 @@
               <span class="success-label">BEFORE</span>
             </div>
             <div class="after">
-              <div class="success-placeholder" style="background: linear-gradient(135deg,#e8f5e9,#c8e6c9);">
-                🏃<span style="color:#2e7d32">AFTER</span>
+              <div class="success-placeholder"
+                style="background: linear-gradient(135deg, var(--clr-primary-xlight), var(--clr-beige-dark));">
+                🏃<span style="color: var(--clr-primary);">AFTER</span>
               </div>
               <span class="success-label">AFTER</span>
             </div>
@@ -820,8 +828,9 @@
               <span class="success-label">BEFORE</span>
             </div>
             <div class="after">
-              <div class="success-placeholder" style="background: linear-gradient(135deg,#e8f5e9,#c8e6c9);">
-                💪<span style="color:#2e7d32">AFTER</span>
+              <div class="success-placeholder"
+                style="background: linear-gradient(135deg, var(--clr-primary-xlight), var(--clr-beige-dark));">
+                💪<span style="color: var(--clr-primary);">AFTER</span>
               </div>
               <span class="success-label">AFTER</span>
             </div>
@@ -843,8 +852,9 @@
               <span class="success-label">BEFORE</span>
             </div>
             <div class="after">
-              <div class="success-placeholder" style="background: linear-gradient(135deg,#e8f5e9,#c8e6c9);">
-                🌸<span style="color:#2e7d32">AFTER</span>
+              <div class="success-placeholder"
+                style="background: linear-gradient(135deg, var(--clr-primary-xlight), var(--clr-beige-dark));">
+                🌸<span style="color: var(--clr-primary);">AFTER</span>
               </div>
               <span class="success-label">AFTER</span>
             </div>
@@ -866,8 +876,9 @@
               <span class="success-label">BEFORE</span>
             </div>
             <div class="after">
-              <div class="success-placeholder" style="background: linear-gradient(135deg,#e8f5e9,#c8e6c9);">
-                ❤️<span style="color:#2e7d32">AFTER</span>
+              <div class="success-placeholder"
+                style="background: linear-gradient(135deg, var(--clr-primary-xlight), var(--clr-beige-dark));">
+                ❤️<span style="color: var(--clr-primary);">AFTER</span>
               </div>
               <span class="success-label">AFTER</span>
             </div>
@@ -1085,7 +1096,7 @@
         <a href="book-consultation.html" class="btn btn-accent btn-lg reveal reveal-delay-3" id="cta-book-btn">
           📅 Book Free Consultation
         </a>
-        <a href="tel:+919876543210" class="btn btn-outline-white btn-lg reveal reveal-delay-4" id="cta-call-btn">
+        <a href="tel:+9987915151" class="btn btn-outline-white btn-lg reveal reveal-delay-4" id="cta-call-btn">
           📞 Call +91 98765 43210
         </a>
       </div>
@@ -1105,18 +1116,18 @@
         <div class="text-center reveal reveal-delay-1">
           <div style="font-size:2rem;margin-bottom:0.75rem;">📞</div>
           <h5 style="color:white;margin-bottom:0.25rem;">Phone / WhatsApp</h5>
-          <a href="tel:+919876543210" style="color:var(--clr-primary-light);font-size:0.95rem;">+91 98765 43210</a>
+          <a href="tel:+9987915151" style="color:var(--clr-primary-light);font-size:0.95rem;">+91 98765 43210</a>
         </div>
         <div class="text-center reveal reveal-delay-2">
           <div style="font-size:2rem;margin-bottom:0.75rem;">✉️</div>
           <h5 style="color:white;margin-bottom:0.25rem;">Email Us</h5>
-          <a href="mailto:hello@Ageless Bodies.com"
-            style="color:var(--clr-primary-light);font-size:0.95rem;">hello@Ageless Bodies.com</a>
+          <a href="mailto:agelessbodies01@gmail.com"
+            style="color:var(--clr-primary-light);font-size:0.95rem;">agelessbodies01@gmail.com</a>
         </div>
         <div class="text-center reveal reveal-delay-3">
           <div style="font-size:2rem;margin-bottom:0.75rem;">📍</div>
           <h5 style="color:white;margin-bottom:0.25rem;">Visit Us</h5>
-          <p style="color:rgba(255,255,255,0.65);font-size:0.875rem;">123 Wellness Ave, Bandra West, Mumbai - 400050</p>
+          <p style="color:rgba(255,255,255,0.65);font-size:0.875rem;">101 Kedarnath tower chs Ltd,  1st floor, off 120 wide DP road, 7 bulgalos, versova, Andheri West, Mumbai - 400061</p>
         </div>
         <div class="text-center reveal reveal-delay-4">
           <div style="font-size:2rem;margin-bottom:0.75rem;">⏰</div>
@@ -1139,8 +1150,7 @@
         <!-- Brand Column -->
         <div class="footer-brand">
           <div class="footer-logo">
-            <div class="footer-logo-icon" aria-hidden="true">🧬</div>
-            Ageless<span>Bodies</span>
+            <img src="assets/images/logo.png" alt="AgelessBodies Logo" style="width:100px; height:100px; object-fit:contain; margin-right:10px; vertical-align:middle;">
           </div>
           <p class="footer-desc">
             India's leading DNA-based personalized nutrition platform. Transforming health through science-backed,
@@ -1190,18 +1200,18 @@
           <div class="footer-contact-item">
             <div class="footer-contact-icon">📞</div>
             <div>
-              <a href="tel:+919876543210" style="color:rgba(255,255,255,0.8);">+91 98765 43210</a><br>
-              <a href="https://wa.me/919876543210" style="color:var(--clr-primary-light);font-size:0.8rem;">WhatsApp
+              <a href="tel:+9987915151" style="color:rgba(255,255,255,0.8);">+91 98765 43210</a><br>
+              <a href="https://wa.me/9987915151" style="color:var(--clr-primary-light);font-size:0.8rem;">WhatsApp
                 Chat</a>
             </div>
           </div>
           <div class="footer-contact-item">
             <div class="footer-contact-icon">✉️</div>
-            <a href="mailto:hello@Ageless Bodies.com" style="color:rgba(255,255,255,0.8);">hello@Ageless Bodies.com</a>
+            <a href="mailto:agelessbodies01@gmail.com" style="color:rgba(255,255,255,0.8);">agelessbodies01@gmail.com</a>
           </div>
           <div class="footer-contact-item">
             <div class="footer-contact-icon">📍</div>
-            <span>123 Wellness Ave, Bandra West, Mumbai - 400050</span>
+            <span>101 Kedarnath tower chs Ltd,  1st floor, off 120 wide DP road, 7 bulgalos, versova, Andheri West, Mumbai - 400061</span>
           </div>
 
           <h4 class="footer-title" style="margin-top:1.5rem;">Newsletter</h4>
@@ -1235,7 +1245,7 @@
   <!-- WhatsApp Float -->
   <div class="whatsapp-float no-print" role="complementary" aria-label="WhatsApp contact">
     <span class="whatsapp-tooltip">Chat on WhatsApp</span>
-    <button id="whatsapp-float-btn" class="whatsapp-btn" data-phone="919876543210" aria-label="Open WhatsApp chat">
+    <button id="whatsapp-float-btn" class="whatsapp-btn" data-phone="9987915151" aria-label="Open WhatsApp chat">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
